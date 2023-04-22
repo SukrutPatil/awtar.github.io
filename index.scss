@@ -1,0 +1,314 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Raleway', sans-serif;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+.contact-btn{
+    padding: 12px 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: #FFCAA3;
+    font-weight: bold;
+}
+nav{
+    padding: 16px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    .logo{
+        color: white;
+        display: flex;
+        align-items: center;
+        img{
+            height: 36px;
+            margin-right: 10px;
+        }
+        p{
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+    .nav-links{
+        display: flex;
+        width: 40%;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+    }
+    .burger{
+        display: none;
+        div{
+            margin: 8px 0px;
+            border-radius: 5px;
+            width: 35px;
+            height: 3px;
+            background: white;
+        }
+    }
+}
+.hero{
+    height: 100vh;
+    width: 100%;
+    background: url(./assets/hero-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .container{
+        color: white;
+        padding: 10% 0%;
+
+        h1{
+            font-size: 72px;
+        }
+        p{
+            width: 50%;
+            line-height: 150%;
+            text-align: justify;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .proof{
+            margin-top: 36px;
+        }
+    }
+    
+    .hero-date{
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+.clients{
+    padding: 100px 0px;
+    
+    h1{
+        font-size: 72px;
+        font-weight: 900;
+    }
+    .container{
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img{
+            height: 80px;
+        }
+    }
+    .head{
+        display: block;
+    }
+}
+.products{
+    padding: 100px 0px;
+    background: #F9F9F9;
+    h1{
+        font-size: 72px;
+        font-weight: 900;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .card-container{
+            padding: 16px;
+            .card{
+                color: white;
+                height: 500px;      
+                
+                padding: 36px;
+                position: relative;
+                p{
+                    margin-top: 20px;
+                    text-align: justify;
+                    width: 45%;
+                }
+               
+            }
+           
+        }
+    }
+}
+.contact{
+    background-color: #000;
+    padding: 100px 0px;
+    h1{
+        font-size: 72px;
+        font-weight: 900;
+        color: #fff;
+    }
+    .contact-box{
+        display: flex;
+        align-items: center;
+    
+        .image{
+            img{
+                height: 100%;
+                object-fit: cover;
+            }
+          
+        }
+        .form{
+            width: 100%;
+            height: 600px;
+            padding: 72px 5%;
+            
+            .field{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 32px;
+                label{
+                    color: white;
+                    margin-bottom: 4px;
+                    font-weight: 700;
+                }
+                input{
+                    padding: 10px;
+                    outline: none;
+                    border: none;
+                }
+                textarea{
+                    padding: 10px;
+                    outline: none;
+                    border: none;
+                    font-size: 14px;
+                }
+            }
+        }
+        
+    }
+   
+  
+}
+
+.about{
+    padding: 100px 0px;
+    h1{
+        font-size: 72px;
+        font-weight: 900;
+    }
+    .about-us{
+        display: flex;
+        align-items: center;
+        margin-top: 24px;
+        .info{
+            padding: 32px;
+
+            p{
+                text-align: justify;
+                line-height: 150%;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    body{
+        overflow-x: hidden;
+    }
+    nav{
+        position: relative;
+        background: rgb(30, 30, 30);
+        height: 10vh;
+        z-index: 1;
+        .logo{
+            p{
+                display: none;
+            }
+        }
+        .nav-links{
+            background: rgb(30, 30, 30);
+            position: absolute;
+            right: 0px;
+            top: 8vh;
+            width: 50%;
+            height: 92vh;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: all 0.5s ease;
+            li{
+                opacity: 0;
+            }
+        }
+        .nav-active{
+            transform: translateX(0%);
+        }
+        .burger{
+            display: block;
+            cursor: pointer;
+            div{
+                transition: all 0.5s ease;
+            }
+        }
+        @keyframes navlinksFade {
+            from{
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+        .toggle .line1{
+            transform: rotate(-45deg) translate(-5px,10px);
+        }
+        .toggle .line2{
+            opacity: 0;
+        }
+        .toggle .line3{
+            transform: rotate(45deg) translate(-5px,-10px);
+        }
+        
+        
+      
+    }
+    .hero{
+        height: 100%;
+        .container{
+            width: 95%;
+            h1{
+                font-size: 32px;
+            }
+            p{
+                margin-top: 20px;
+                font-size: 14px;
+                width: 100%;
+            }
+        }
+    }
+    .products{
+       
+        .container{
+            grid-template-columns: 1fr;
+            width: 95%;
+            .card-container{
+                .card{
+                height: 400px;              
+                background-size: cover;
+                background-repeat: no-repeat;
+                p{
+                    width: 100%;
+                }
+                }
+            }
+        }
+    }
+}
